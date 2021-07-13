@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Login } from '../../models/login.model';
+import { LoginService } from '../../service/login.service';
 
 @Component({
   selector: 'app-login',
@@ -16,6 +17,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private snackBar: MatSnackBar,
+    private router: Router,
+    private loginService: LoginService
     
     
     //,
@@ -41,7 +44,31 @@ export class LoginComponent implements OnInit {
         return;
     }
     const login: Login = this.form.value;
-    alert(JSON.stringify(login));
+    this.loginService.logar(login)
+      .subscribe(
+        data => {
+          console.log(JSON.stringify(data));
+          localStorage['token'] = data['data']['token'];
+          const usuarioData = JSON.parse(
+            atob(data['data']['token'].split('.')[1]));
+          console.log(JSON.stringify(usuarioData));
+          if (usuarioData['role'] == 'ROLE_ADMIN') {
+            alert('Deve redirecionar para a página de admin');
+            //this.router.navigater(['/admin']);
+          } else {
+            alert('Deve redirecionar para a página de funcionário');
+            //this.router.navigater(['/funcionario']);
+          }
+        },
+        err => {
+          console.log(JSON.stringify(err));
+          let msg: string = "Tente novamente em instantes.";
+          if(err['status'] == 401) {
+            msg = "Email, senha inválidos(s)."
+          }
+          this.snackBar.open(msg,"Erro", { duration: 5000 })
+        }
+      );
   }
 
 }
