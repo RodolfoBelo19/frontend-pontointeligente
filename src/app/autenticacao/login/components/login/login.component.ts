@@ -64,7 +64,7 @@ export class LoginComponent implements OnInit {
           console.log(JSON.stringify(err));
           let msg: string = "Tente novamente em instantes.";
           if(err['status'] == 401) {
-            msg = "Email, senha inválidos(s)."
+            msg = "Email/Senha inválidos(s)."
           }
           this.snackBar.open(msg,"Erro", { duration: 5000 })
         }
