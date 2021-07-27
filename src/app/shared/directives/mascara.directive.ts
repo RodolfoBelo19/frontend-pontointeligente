@@ -49,13 +49,13 @@ export class MascaraDirective implements ControlValueAccessor {
     $event.target.value = this.aplicarMascara(valor);
   }
 
-  @HostListener('blur', [$event])
+  @HostListener('blur', ['$event'])
   onBlur($event: any) {
-  ($event.target.value.lenght === this.mascaralenght) {
-    return
-  }
-  this.OnChange('');
-  $event.target.value = '';
+    if ($event.target.value.length === this.mascara.length) {
+      return;
+    }
+    this.OnChange('');
+    $event.target.value = '';
   }
 
   aplicarMascara(valor: string): string {
