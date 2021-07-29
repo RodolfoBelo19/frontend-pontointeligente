@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { CadastroPj } from '../../models/cadastro-pj.model';
-import { CadastroPjService } from '../../services/cadastro-pj.service';
+import { CadastrarPjService } from '../../services/cadastro-pj.service';
 
 @Component({
   selector: 'app-cadastrar-pj',
@@ -18,7 +18,7 @@ export class CadastrarPjComponent implements OnInit {
     private fb: FormBuilder,
     private snackBar: MatSnackBar,
     private router: Router,
-    private cadastrarPjService: CadastroPjService
+    private cadastrarPjService: CadastrarPjService
   ) { }
 
   ngOnInit(): void {

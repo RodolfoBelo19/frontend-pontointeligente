@@ -5,10 +5,8 @@ import { environment as env} from 'src/environments/environment';
 
 import { CadastroPj } from '../models/cadastro-pj.model';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class CadastroPjService {
+@Injectable()
+export class CadastrarPjService {
 
   private readonly PATH: string = 'cadastrar-pj';
 
