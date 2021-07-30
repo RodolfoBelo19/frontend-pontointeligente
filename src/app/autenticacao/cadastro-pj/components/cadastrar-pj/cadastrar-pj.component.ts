@@ -59,5 +59,6 @@ export class CadastrarPjComponent implements OnInit {
         }
       );
     return false;
+    
   } 
 }
