@@ -5,7 +5,6 @@
   <title>PontoInteligente</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,12 +12,11 @@
   <style>
     
     body {
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     flex-direction: column;
+    /* background-image: url('./assets/Blue-Background-Wallpaper-HD-16273.jpg'); */
   }
 
   h1 {
@@ -26,83 +24,6 @@
     font-size: 50px;
     padding-bottom: 30px;
     text-transform: uppercase;
-  }
-
-  .relogio {
-    margin-top: 10px;
-    width: 350px;
-    height: 350px;
-    border-radius: 50%;
-    border: 8px solid #f1f1f1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .relogio::before {
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border-radius: 20px;
-    background: #999;
-    z-index: 9999;
-  }
-
-  .hora,
-  .minutos,
-  .segundos {
-    position: absolute;
-  }
-
-  .hora,
-  .hr {
-    width: 200px;
-    height: 200px;
-  }
-
-  .minutos,
-  .min {
-    width: 230px;
-    height: 230px;
-  }
-
-  .segundos,
-  .seg {
-    width: 250px;
-    height: 250px;
-  }
-
-  .hr,
-  .min,
-  .seg {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-  }
-
-  .hr::before {
-    content: "";
-    position: absolute;
-    width: 8px;
-    height: 100px;
-    background: #a0a6fd;
-  }
-
-  .min::before {
-    content: "";
-    position: absolute;
-    width: 4px;
-    height: 110px;
-    background: rgb(171, 237, 248);
-  }
-
-  .seg::before {
-    content: "";
-    position: absolute;
-    width: 2px;
-    height: 120px;
-    background: #e94f07;
   }
 
   #relogio-ditital {
