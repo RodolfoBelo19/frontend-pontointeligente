@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { CadastroPjRoutingModule } from './autenticacao/cadastro-pj/components/c
 import { RouterModule } from '@angular/router';
 import { CadastroPfModule } from './autenticacao/cadastro-pf/cadastro-pf.module';
 import { CadastroPfRoutingModule } from './autenticacao/cadastro-pf/cadastro-pf-routing.module';
+import { FuncionarioModule } from './funcionario/funcionario.module';
 
 @NgModule({
   declarations: [
@@ -29,8 +31,10 @@ import { CadastroPfRoutingModule } from './autenticacao/cadastro-pf/cadastro-pf-
     CadastroPfRoutingModule,
     MatTooltipModule,
     MatIconModule,
+    MatToolbarModule,
     RouterModule,
     FlexLayoutModule,
+    FuncionarioModule,
     
     AppRoutingModule
   ],
