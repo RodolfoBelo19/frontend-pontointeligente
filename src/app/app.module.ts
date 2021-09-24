@@ -15,6 +15,7 @@ import { RouterModule } from '@angular/router';
 import { CadastroPfModule } from './autenticacao/cadastro-pf/cadastro-pf.module';
 import { CadastroPfRoutingModule } from './autenticacao/cadastro-pf/cadastro-pf-routing.module';
 import { FuncionarioModule } from './funcionario/funcionario.module';
+import { FuncionarioRoutingModule } from './funcionario/funcionario-routing.module';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { FuncionarioModule } from './funcionario/funcionario.module';
     RouterModule,
     FlexLayoutModule,
     FuncionarioModule,
+    FuncionarioRoutingModule,
     
     AppRoutingModule
   ],
